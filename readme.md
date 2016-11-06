@@ -62,6 +62,6 @@ Every other scenario displayed above already works in this sample.
     ** @petebd: I agree that this is not ideal but the unit testing setup doesn't make it easy to run the AoT
        compiler on the example code at this time. So we focussed on testing the code using the dynamic compiler
        for now, since the only difference will be if we are relying upon something that is removed by the AoT
-       compiler. We will use e2e test that AoT actually works.
+       compiler. We will use e2e tests to test that AoT actually works.
     **
     
