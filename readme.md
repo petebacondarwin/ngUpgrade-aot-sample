@@ -45,6 +45,10 @@ Every other scenario displayed above already works in this sample.
     ```
     
     Is this because a convenience function would be too dynamic for the compiler?
+    
+    ** @petebd: yes, the AoT compiler needs to have the directive information statically available at compile time.
+       and it is not clever enough to parse such a helper function outside of running it - even if it is a pure function.
+    **
 
 2. Why do all the samples and test cases use ``platformBrowserDynamic``, although we are using AOT? 
 
@@ -55,5 +59,9 @@ Every other scenario displayed above already works in this sample.
         document.body,
         'flight-app')
     ```
-
+    ** @petebd: I agree that this is not ideal but the unit testing setup doesn't make it easy to run the AoT
+       compiler on the example code at this time. So we focussed on testing the code using the dynamic compiler
+       for now, since the only difference will be if we are relying upon something that is removed by the AoT
+       compiler. We will use e2e test that AoT actually works.
+    **
     
